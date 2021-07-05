@@ -60,6 +60,6 @@ OUTRO("Outro");
 
 Pré-requisitos para a execução do projeto:
 
-* Java 11 ou versões superiores.
+* Java 11 (Para executar, aleterar para SDK (jbr-11 JetBrains Runtime version 11.1.10). Não utilizar versões superiores ou inferiores.
 * Maven 3.6.3 ou versões superiores.
 * Intellj IDEA Community Edition ou outra IDE.
