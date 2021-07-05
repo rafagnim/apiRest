@@ -6,7 +6,57 @@ Em relação ao projeto desenvolvido em aula, fiz os seguintes acréscimos:
 
 - ---
 
+Acrescentei a API a opção de endereço, o que, dada a forma como efetuada resultou em alteração em vários pontos do projeto. Como a Entidade Pessoa pode ter vários tipos de endereço, foi necessária a criação de uma nova Enum AddressType com a enumeração dos tipos possíveis (optei pelos termos em português: RESIDENCIAL, COMERCIAL e OUTRO).
 
+Foi necessário alterar a entidade Pessoa para inclusão desse atributo, na forma de FK (foreign key) e criar nova entidade DTO, para os endereços.
+
+Fiz o teste da API alterada com uso da ferramenta Postman.
+
+Abaixo segue a documentação, com a alteração efetuada.
+
+JSON - Documentação:
+
+http://localhost:8080/api/v1/people/ (POST)
+
+http://localhost:8080/api/v1/people/"id" (PUT, etc.)
+
+GET:
+
+{"Id":Long}
+
+POST:
+
+{"firstName":"stringObrigatoria",
+
+"lastName":"stringObrigatoria",
+
+"cpf":"stringObrigatoria",
+
+"address":[{"type":"COMERCIAL",
+
+"address":"stringObrigatoria"}],
+
+"birthDate":"dd-MM-aaa",
+
+"phones":[{
+
+"type":"MOBILE",
+
+"number":"(011)67890123"}]}
+
+```
+Telefones Type (Enum):
+HOME("Home"),
+MOBILE("Mobile"),
+COMMERCIAL("Commercial");
+```
+
+```
+Endereços Type (Enum):
+RESIDENCIAL("Residencial"),
+COMERCIAL("Comercial"),
+OUTRO("Outro");
+```
 
 Pré-requisitos para a execução do projeto:
 

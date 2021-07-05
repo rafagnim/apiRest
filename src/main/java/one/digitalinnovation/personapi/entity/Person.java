@@ -36,8 +36,8 @@ public class Person {
     @Column(nullable = false, unique = true)
     private String cpf;
 
-    @Column(nullable = false)
-    private String address;
+    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+    private List<Address> address;
 
     private LocalDate birthDate;
 
